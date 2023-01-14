@@ -45,11 +45,11 @@ public class BlogService {
 
         User user= userRepository1.findById(userId).get();
 
-        List<Blog> lisOfBlog=user.getBlogLists();
+        List<Blog> lisOfBlog=user.getBlogList();
 
         lisOfBlog.add(blog);
 
-        user.setBlogLists(lisOfBlog);
+        user.setBlogList(lisOfBlog);
 
         blogRepository1.save(blog);
 
@@ -90,7 +90,7 @@ public class BlogService {
 
         List<Image> imageList=new ArrayList<>();
 
-        imageList=blog.getImageLists();
+        imageList=blog.getImageList();
         for(Image image: imageList){
             imageRepository.delete(image);
         }
@@ -99,11 +99,11 @@ public class BlogService {
         user=blog.getUser();
         List<Blog> blogList=new ArrayList<>();
 
-        blogList =user.getBlogLists();
+        blogList =user.getBlogList();
 
         blogList.remove(blog);
 
-        user.setBlogLists(blogList);
+        user.setBlogList(blogList);
 
         blogRepository1.delete(blog);
 
