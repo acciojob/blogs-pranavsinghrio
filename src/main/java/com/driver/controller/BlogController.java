@@ -6,13 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-
 @RestController
 @RequestMapping("/blogs")
 public class BlogController {
-
     @Autowired
     BlogService blogService;
 
@@ -23,7 +20,6 @@ public class BlogController {
         countOfBlogs=list.size();
         return new ResponseEntity<>(countOfBlogs, HttpStatus.OK);
     }
-
     @PostMapping("/create")
     public ResponseEntity<Void> createBlog(@RequestParam Integer userId ,
                                            @RequestParam String title,

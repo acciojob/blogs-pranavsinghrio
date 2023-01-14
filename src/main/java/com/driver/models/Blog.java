@@ -11,7 +11,6 @@ import java.util.List;
 @Entity
 @Table(name="blogs")
 public class Blog {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int id;
@@ -66,7 +65,7 @@ public class Blog {
     private User user;
 
     @OneToMany(mappedBy = "blog",cascade = CascadeType.ALL)
-    private List<Image> imageLists;
+    private List<Image> imageList;
 
     public User getUser() {
         return user;
@@ -76,11 +75,11 @@ public class Blog {
         this.user = user;
     }
 
-    public List<Image> getImageLists() {
-        return imageLists;
+    public List<Image> getImageList() {
+        return imageList;
     }
 
-    public void setImageLists(List<Image> imageLists) {
-        this.imageLists = imageLists;
+    public void setImageList(List<Image> imageList) {
+        this.imageList = imageList;
     }
 }
