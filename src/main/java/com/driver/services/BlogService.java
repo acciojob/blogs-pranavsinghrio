@@ -102,11 +102,8 @@ public class BlogService {
         blogList =user.getBlogList();
 
         blogList.remove(blog);
-
         user.setBlogList(blogList);
-
         blogRepository1.delete(blog);
-
         userRepository1.save(user);
     }
 }
